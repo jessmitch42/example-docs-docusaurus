@@ -12,11 +12,11 @@ A new ad creative can be created with `POST` request to this endpoint.
 
 ## Requests
 
-POST requests must include an [ad creative object](/docs/intro#ad-creative-object) that specifies the details of the ad creative being created.
+`POST` requests must include an [ad creative object](/docs/intro#ad-creative-object) that specifies the details of the ad creative being created.
 
 ### Body parameters
 
-The body parameters for this POST request match the ad creative object, as defined in the [introduction](/docs/intro#ad-creative-object) to these docs.
+The body parameters for this `POST` request match the ad creative object, as defined in the [introduction](/docs/intro#ad-creative-object) to these docs.
 
 | Param             | Type                                               | Required | Example                                                                       |
 | ----------------- | -------------------------------------------------- | -------- | ----------------------------------------------------------------------------- |
@@ -96,7 +96,7 @@ const newAC = createAdCreative(data);
 
 #### Response body
 
-Successful requests will respond with a `200` status code, as well as information related to the created ad creative. This
+Successful requests will respond with a `200` status code, as well as information related to the created ad creative.
 
 | Param              | Type     |
 | ------------------ | -------- |

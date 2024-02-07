@@ -12,7 +12,7 @@ Bulk ad creatives can be created with `POST` request to this endpoint.
 
 ## Requests
 
-POST requests must include an array of [ad creative objects](/docs/endpoints/create-bulk-ad-creatives#ad-creative-object) being created.
+`POST` requests must include an array of [ad creative objects](/docs/endpoints/create-bulk-ad-creatives#ad-creative-object) being created.
 
 ### Body parameters
 

@@ -12,7 +12,7 @@ Retrieve a list of existing ad creative using a `GET` request to this endpoint.
 
 ### Parameters
 
-No body or query parameters are required (or permitted) for this endpoint.
+No body or path parameters are required (or permitted) for this endpoint.
 
 ### Request examples
 

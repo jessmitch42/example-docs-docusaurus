@@ -3,6 +3,6 @@
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "Security information related to this API."
+    "description": "To ensure all API requests are made securely, requests must with authorized with a bearer token. See the Authentication section below for more information on using your token."
   }
 }

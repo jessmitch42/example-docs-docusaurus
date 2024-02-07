@@ -12,11 +12,12 @@ These example docs do not include a section on how to create a token for authent
 
 ## Example request
 
-The following cURL command demonstrates an example of how to authenticate a `GET` request to [retrieve an existing ad creatives](/docs/endpoints/retrieve-ad-creative).
+The following cURL command demonstrates an example of how to authenticate a `GET` request to [retrieve a list of existing ad creatives](/docs/endpoints/retrieve-ad-creatives).
 
 Note the inclusion of the `Authorization` header, which is set to the user’s `X_TOKEN` .
 
 ```bash
 curl 'https://api.adcreative.com/v1/ad-creative/<id>' \
-  -H 'Authorization: Bearer '"$X_TOKEN"''
+  -H 'Authorization: Bearer '"$X_TOKEN"'' \
+  -H 'Content-Type: application/json' \
 ```

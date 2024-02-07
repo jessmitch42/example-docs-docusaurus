@@ -38,3 +38,17 @@ The following endpoints are publicly available to developers.
 | `GET`       | [Retrieve ad creatives](/docs/endpoints/retrieve-ad-creative)        |
 | `PATCH`     | [Edit an ad creative](/docs/endpoints/edit-an-ad-creative)           |
 | `POST`      | [Query ad creatives](/docs/endpoints/query-ad-creatives)             |
+
+## Ad creative object
+
+Ad creatives are represented in this API by the "Ad creative object". Retrieved ad creatives will also be returned using this structure.
+
+| Key                | Type                                                         | Description                                                      | Example                                                                       |
+| ------------------ | ------------------------------------------------------------ | ---------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `id`               | `string`                                                     | A unique ID for the ad creative.                                 | `"jyh7"`                                                                      |
+| `name`             | `string`                                                     | The ad creative's name.                                          | `"Ad Creative 1"`                                                             |
+| `type`             | `string` (`"image"` / `"animation"` / `"text"` / `"video"` ) | The ad creative's type (i.e., it's format).                      | `"text"`                                                                      |
+| `content`          | `string`                                                     | Content for the ad creative; either the media source or text.    | `"This is some text for an ad"`                                               |
+| `additional_data`  | `array` of key (`string`) ⇒ value (any) elements             | Any additional information to note for the ad creative.          | `[{ "example1": 15 },{ "example2": "another value" },{ "example3": false },]` |
+| `created_time`     | `string` (timestamp)                                         | A timestamp assigned to the ad creative at the time of creation. | `'2024-01-31 23:59:59'`                                                       |
+| `last_edited_time` | `string` (timestamp)                                         | A timestamp that is updated when an ad creative is edited.       | `'2024-01-31 23:59:59'`                                                       |

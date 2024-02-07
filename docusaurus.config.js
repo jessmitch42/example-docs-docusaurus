@@ -67,7 +67,7 @@ const config = {
         items: [
           {
             type: "docSidebar",
-            sidebarId: "tutorialSidebar",
+            sidebarId: "endpointsSidebar",
             position: "left",
             label: "API reference",
           },

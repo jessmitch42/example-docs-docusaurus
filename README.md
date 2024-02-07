@@ -1,4 +1,10 @@
-# Website
+# Technical writer take-home assignment
+
+Please refer to `assignment.md` for assignment details.
+
+## A note on privacy
+
+I have intentionally left of the name of the company this assignment is for to make it less discoverable for other candidates while it is public. I will make the repo private once it has been reviewed.
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 

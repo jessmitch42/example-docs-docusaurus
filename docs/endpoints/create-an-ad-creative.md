@@ -8,7 +8,7 @@ sidebar_position: 2
 
 A new ad creative can be created with `POST` request to this endpoint.
 
-> To create multiple ad creatives with a single request, see the [Create bulk ad creatives](/docs/endpoints/create-bulk-ad-creatives) endpoint.
+> To create multiple ad creatives with a single request, see the [Create bulk ad creatives](./create-bulk-ad-creatives) endpoint.
 
 ## Requests
 

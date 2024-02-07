@@ -25,19 +25,19 @@ _Note: For the purpose of these example docs, we'll limit ad creatives to these 
 
 To use this REST API, developers can make requests to the `https://api.adcreative.com/v1/` base URL. HTTPS is required for all API requests.
 
-To learn more about how to use each endpoint that is currently available, see the [Endpoints](/docs/category/endpoints) section.
+To learn more about how to use each endpoint that is currently available, see the [Endpoints](./category/endpoints) section.
 
 ### Supported endpoints
 
 The following endpoints are publicly available to developers.
 
-| HTTP method | Endpoint                                                             |
-| ----------- | -------------------------------------------------------------------- |
-| `POST`      | [Create an ad creative](/docs/endpoints/create-an-ad-creative)       |
-| `POST`      | [Create bulk ad creatives](/docs/endpoints/create-bulk-ad-creatives) |
-| `GET`       | [Retrieve ad creatives](/docs/endpoints/retrieve-ad-creatives)       |
-| `PATCH`     | [Update an ad creative](/docs/endpoints/update-an-ad-creative)       |
-| `POST`      | [Query ad creatives](/docs/endpoints/query-ad-creatives)             |
+| HTTP method | Endpoint                                                         |
+| ----------- | ---------------------------------------------------------------- |
+| `POST`      | [Create an ad creative](./endpoints/create-an-ad-creative)       |
+| `POST`      | [Create bulk ad creatives](./endpoints/create-bulk-ad-creatives) |
+| `GET`       | [Retrieve ad creatives](./endpoints/retrieve-ad-creatives)       |
+| `PATCH`     | [Update an ad creative](./endpoints/update-an-ad-creative)       |
+| `POST`      | [Query ad creatives](./endpoints/query-ad-creatives)             |
 
 ## Ad creative object
 

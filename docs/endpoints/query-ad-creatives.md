@@ -20,7 +20,7 @@ If the `start_date` is not included, the response will include all ad creatives 
 
 If the `end_date` is not included, the response will include all ad creatives created/updated after the specified `start_date`.
 
-If neither the `start_date` or `end_date` parameters are included in the request, the entire ad creative list will be returned. Please see the [Retrieve ad creative list](/docs/endpoints/retrieve-ad-creatives) endpoint as a better option for this functionality.
+If neither the `start_date` or `end_date` parameters are included in the request, the entire ad creative list will be returned. Please see the [Retrieve ad creative list](./retrieve-ad-creatives) endpoint as a better option for this functionality.
 
 The `start_date` must be before the `end_date` to be valid.
 

@@ -8,17 +8,17 @@ sidebar_position: 3
 
 Bulk ad creatives can be created with `POST` request to this endpoint.
 
-> To create a single ad creative, see the [Create ad creatives](/docs/endpoints/create-an-ad-creatives) endpoint.
+> To create a single ad creative, see the [Create ad creatives](./create-bulk-ad-creatives) endpoint.
 
 ## Requests
 
-`POST` requests must include an array of [ad creative objects](/docs/endpoints/create-bulk-ad-creatives#ad-creative-object) being created.
+`POST` requests must include an array of [ad creative objects](./create-bulk-ad-creatives#ad-creative-object) being created.
 
 ### Body parameters
 
-| Param             | Type                                                                                          | Required | Example                                            |
-| ----------------- | --------------------------------------------------------------------------------------------- | -------- | -------------------------------------------------- |
-| Ad creative array | `array` of [ad creative objects](/docs/endpoints/create-bulk-ad-creatives#ad-creative-object) | yes ✅   | `[<ad-creative-object-1>, <ad-creative-object-2>]` |
+| Param             | Type                                                                            | Required | Example                                            |
+| ----------------- | ------------------------------------------------------------------------------- | -------- | -------------------------------------------------- |
+| Ad creative array | `array` of [ad creative objects](./create-bulk-ad-creatives#ad-creative-object) | yes ✅   | `[<ad-creative-object-1>, <ad-creative-object-2>]` |
 
 #### Ad creative object
 
@@ -112,9 +112,9 @@ const newBulkACs = createBulkAdCreatives(data);
 
 Successful requests will respond with a `200` status code, as well as an array of ad creative objects that was successfully created.
 
-| Field             | Type                                                                                          |
-| ----------------- | --------------------------------------------------------------------------------------------- |
-| Ad creative array | `array` of [ad creative objects](/docs/endpoints/create-bulk-ad-creatives#ad-creative-object) |
+| Field             | Type                                                                            |
+| ----------------- | ------------------------------------------------------------------------------- |
+| Ad creative array | `array` of [ad creative objects](./create-bulk-ad-creatives#ad-creative-object) |
 
 #### Response example
 

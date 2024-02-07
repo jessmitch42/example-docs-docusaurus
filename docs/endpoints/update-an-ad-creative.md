@@ -119,7 +119,7 @@ Successful requests will respond with a `200` status code, as well as informatio
 
 ### Error (`400` )
 
-Errors can occur for different reasons, such as a missing or invalid token or required parameter. To resolve request errors, refer to the `error_msg` in the response body for more information.
+Errors can occur for different reasons, such as a missing or invalid token or if the ID of the ad creative being updated does not exist. To resolve request errors, refer to the `error_msg` in the response body for more information.
 
 ```json
 {

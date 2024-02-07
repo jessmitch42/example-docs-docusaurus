@@ -2,11 +2,11 @@
 sidebar_position: 6
 ---
 
-# Query ad creatives
+# Create status report
 
 ### POST `https://api.adcreative.com/v1/ad-creative/query`
 
-Query the list of existing ad creatives tied to an account using a `POST` request to this endpoint.
+Create a status report of existing ad creatives tied to an account using a `POST` request to this endpoint.
 
 This endpoint accepts a start and end date to filter for ad creatives that were created or updated within that date range.
 

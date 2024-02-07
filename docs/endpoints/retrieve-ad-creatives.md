@@ -4,22 +4,24 @@ sidebar_position: 4
 
 # Retrieve ad creative list
 
-### GET `https://api.adcreative.com/v1/ad-creative`
+### GET `https://api.adcreative.com/v1/ad-creative?ids=<id1>,<id2>`
 
-Retrieve a list of existing ad creative using a `GET` request to this endpoint.
+Retrieve a list of existing ad creative using a `GET` request to this endpoint. To retrieve specific ad creatives, include their IDs as a list under the `ids` query parameter.
 
 ## Requests
 
-### Parameters
+### Query parameters
 
-No body or path parameters are required (or permitted) for this endpoint.
+| Param | Type     | Required | Example  |
+| ----- | -------- | -------- | -------- |
+| `ids` | `string` | yes ✅   | `"jyh7"` |
 
 ### Request examples
 
 #### cURL
 
 ```bash
-curl 'https://api.adcreative.com/v1/ad-creative' \
+curl 'https://api.adcreative.com/v1/ad-creative?ids=<id1>,<id2>' \
   -H 'Authorization: Bearer '"$X_TOKEN"'' \
   -H "Content-Type: application/json"
 ```
@@ -27,13 +29,15 @@ curl 'https://api.adcreative.com/v1/ad-creative' \
 #### JavaScript
 
 ```jsx
-async function getAdCreativeList() {
+async function getAdCreativeList(idArray) {
   const token = process.env.X_TOKEN;
-  const baseURL = "https://api.adcreative.com/v1/ad-creative";
+  // add
+  const queryParams = idArray.map((id) => id).join(",");
+  const url = `https://api.adcreative.com/v1/ad-creative?ids=${queryParams}`;
 
   // Make GET request
   try {
-    const response = await fetch(baseURL, {
+    const response = await fetch(url, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -48,7 +52,7 @@ async function getAdCreativeList() {
   }
 }
 
-const existingACs = getAdCreativeList();
+const existingACs = getAdCreativeList(["jyh7", "h7g0"]);
 ```
 
 ## Responses
@@ -74,7 +78,7 @@ Successful requests will respond with a `200` status code, as well as an array o
 ```json
 [
   {
-    "id": "jess1",
+    "id": "jyh7",
     "name": "First Ad Creative",
     "type": "image",
     "content": "/images/first_ad_creative.png",
@@ -83,7 +87,7 @@ Successful requests will respond with a `200` status code, as well as an array o
     "last_updated_time": "2024-01-31 23:59:58"
   },
   {
-    "id": "bob1",
+    "id": "h7g0",
     "name": "Another Ad Creative",
     "type": "text",
     "content": "Here is some text for an ad!",

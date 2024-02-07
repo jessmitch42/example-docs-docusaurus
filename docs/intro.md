@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## Overview
 
-Use this REST API to create, update, list, and query ad creatives. These are example docs for a technical assignment and do not represent a usable REST API.
+Use this REST API to create, update, and list ad creatives, as well as to generate status reports. These are example docs for a technical assignment and do not represent a usable REST API.
 
 ### What is an ad creative?
 

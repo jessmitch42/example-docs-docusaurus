@@ -35,8 +35,8 @@ The following endpoints are publicly available to developers.
 | ----------- | -------------------------------------------------------------------- |
 | `POST`      | [Create an ad creative](/docs/endpoints/create-an-ad-creative)       |
 | `POST`      | [Create bulk ad creatives](/docs/endpoints/create-bulk-ad-creatives) |
-| `GET`       | [Retrieve ad creatives](/docs/endpoints/retrieve-ad-creative)        |
-| `PATCH`     | [Update an ad creative](/docs/endpoints/edit-an-ad-creative)         |
+| `GET`       | [Retrieve ad creatives](/docs/endpoints/retrieve-ad-creatives)       |
+| `PATCH`     | [Update an ad creative](/docs/endpoints/update-an-ad-creative)       |
 | `POST`      | [Query ad creatives](/docs/endpoints/query-ad-creatives)             |
 
 ## Ad creative object

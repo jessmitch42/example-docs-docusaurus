@@ -53,7 +53,7 @@ curl -X PATCH 'https://api.adcreative.com/v1/ad-creative/jyh7' \
 async function updateAdCreative(data) {
   const { id, options } = data;
   if (!id) {
-    console.error('An ID is required.');
+    console.error("An ID is required.");
     return;
   }
   const baseURL = `https://api.adcreative.com/v1/ad-creative/${id}`;
@@ -65,7 +65,7 @@ async function updateAdCreative(data) {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(options),
     });
@@ -75,10 +75,11 @@ async function updateAdCreative(data) {
     console.error("Error:", error);
     return error;
   }
+}
 
 const data = {
   id: "jyh7",
-  options: {content: "/images/different_source_image.png"}
+  options: { content: "/images/different_source_image.png" },
 };
 
 const updatedAC = updateAdCreative(data);
@@ -92,7 +93,7 @@ const updatedAC = updateAdCreative(data);
 
 Successful requests will respond with a `200` status code, as well as information related to the updated ad creative. The full ad creative object will be returned even if only certain fields were updated.
 
-| Param              | Type     |
+| Field              | Type     |
 | ------------------ | -------- |
 | `id`               | `string` |
 | `name`             | `string` |

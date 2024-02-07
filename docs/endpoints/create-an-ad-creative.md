@@ -68,7 +68,7 @@ async function createAdCreative(options) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(data),
     });
@@ -78,13 +78,14 @@ async function createAdCreative(options) {
     console.error("Error:", error);
     return error;
   }
+}
 
 const data = {
   id: "jess1",
   name: "First Ad Creative",
   type: "image",
   content: "/images/first_ad_creative.png",
-  additional_data: [ { client: "TBD" } ],
+  additional_data: [{ client: "TBD" }],
 };
 
 const newAC = createAdCreative(data);
@@ -98,7 +99,7 @@ const newAC = createAdCreative(data);
 
 Successful requests will respond with a `200` status code, as well as information related to the created ad creative.
 
-| Param              | Type     |
+| Field              | Type     |
 | ------------------ | -------- |
 | `id`               | `string` |
 | `name`             | `string` |

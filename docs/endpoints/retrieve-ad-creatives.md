@@ -37,7 +37,7 @@ async function getAdCreativeList() {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
     });
 
@@ -46,6 +46,7 @@ async function getAdCreativeList() {
     console.error("Error:", error);
     return error;
   }
+}
 
 const existingACs = getAdCreativeList();
 ```
@@ -56,9 +57,9 @@ const existingACs = getAdCreativeList();
 
 #### Response body
 
-Successful requests will respond with a `200` status code, as well as and array of ad creative objects associated with the developer's account.
+Successful requests will respond with a `200` status code, as well as an array of ad creative objects associated with the developer's account.
 
-| Param              | Type     |
+| Field              | Type     |
 | ------------------ | -------- |
 | `id`               | `string` |
 | `name`             | `string` |

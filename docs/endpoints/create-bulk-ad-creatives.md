@@ -73,7 +73,7 @@ async function createBulkAdCreatives(adArray) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(adArray),
     });
@@ -83,6 +83,7 @@ async function createBulkAdCreatives(adArray) {
     console.error("Error:", error);
     return error;
   }
+}
 
 const data = [
   {
@@ -90,15 +91,15 @@ const data = [
     name: "First Ad Creative",
     type: "image",
     content: "/images/first_ad_creative.png",
-    additional_data: [ { client: "TBD" } ],
+    additional_data: [{ client: "TBD" }],
   },
   {
     id: "bob's example",
     name: "Another Ad Creative",
     type: "text",
     content: "Here is some text for an ad!",
-  }
-]
+  },
+];
 
 const newBulkACs = createBulkAdCreatives(data);
 ```
@@ -109,9 +110,9 @@ const newBulkACs = createBulkAdCreatives(data);
 
 #### Response body
 
-Successful requests will respond with a `200` status code, as well as and array of ad creative objects that was successfully created.
+Successful requests will respond with a `200` status code, as well as an array of ad creative objects that was successfully created.
 
-| Param             | Type                                                                                          |
+| Field             | Type                                                                                          |
 | ----------------- | --------------------------------------------------------------------------------------------- |
 | Ad creative array | `array` of [ad creative objects](/docs/endpoints/create-bulk-ad-creatives#ad-creative-object) |
 

@@ -127,7 +127,7 @@ Successful requests will respond with a `200` status code, as well as an array o
     "content": "/images/first_ad_creative.png",
     "additional_data": [{ "client": "TBD" }],
     "created_time": "2024-01-31 23:59:58",
-    "last_edited_time": "2024-01-31 23:59:58"
+    "last_updated_time": "2024-01-31 23:59:58"
   },
   {
     "id": "bob1",
@@ -136,7 +136,7 @@ Successful requests will respond with a `200` status code, as well as an array o
     "content": "Here is some text for an ad!",
     "additional_data": [],
     "created_time": "2024-01-31 23:59:59",
-    "last_edited_time": "2024-01-31 23:59:59"
+    "last_updated_time": "2024-01-31 23:59:59"
   }
 ]
 ```

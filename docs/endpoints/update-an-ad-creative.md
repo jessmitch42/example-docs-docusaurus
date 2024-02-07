@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Edit an ad creative
+# Update an ad creative
 
 ### PATCH `https://api.adcreative.com/v1/ad-creative/<id>`
 
@@ -93,15 +93,15 @@ const updatedAC = updateAdCreative(data);
 
 Successful requests will respond with a `200` status code, as well as information related to the updated ad creative. The full ad creative object will be returned even if only certain fields were updated.
 
-| Field              | Type     |
-| ------------------ | -------- |
-| `id`               | `string` |
-| `name`             | `string` |
-| `type`             | `string` |
-| `content`          | `string` |
-| `additional_data`  | `array`  |
-| `created_at`       | `string` |
-| `last_edited_time` | `string` |
+| Field               | Type     |
+| ------------------- | -------- |
+| `id`                | `string` |
+| `name`              | `string` |
+| `type`              | `string` |
+| `content`           | `string` |
+| `additional_data`   | `array`  |
+| `created_at`        | `string` |
+| `last_updated_time` | `string` |
 
 #### Response example
 
@@ -113,7 +113,7 @@ Successful requests will respond with a `200` status code, as well as informatio
   "content": "/images/different_source_image.png",
   "additional_data": [{ "client": "TBD" }],
   "created_time": "2024-01-31 23:59:59",
-  "last_edited_time": "2024-02-04 13:59:59"
+  "last_updated_time": "2024-02-04 13:59:59"
 }
 ```
 

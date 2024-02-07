@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Create status report
 
-### POST `https://api.adcreative.com/v1/ad-creative/query`
+### POST `https://api.adcreative.com/v1/status-report`
 
 Create a status report of existing ad creatives tied to an account using a `POST` request to this endpoint.
 
@@ -34,7 +34,7 @@ The `start_date` must be before the `end_date` to be valid.
 #### cURL
 
 ```bash
-curl -X POST 'https://api.adcreative.com/v1/ad-creative/query' \
+curl -X POST 'https://api.adcreative.com/v1/status-report' \
   -H 'Authorization: Bearer '"$X_TOKEN"'' \
   -H "Content-Type: application/json" \
   --data '{
@@ -46,9 +46,9 @@ curl -X POST 'https://api.adcreative.com/v1/ad-creative/query' \
 #### JavaScript
 
 ```jsx
-async function queryAdCreativeList() {
+async function createStatusReport() {
   const token = process.env.X_TOKEN;
-  const baseURL = "https://api.adcreative.com/v1/ad-creative/query";
+  const baseURL = "https://api.adcreative.com/v1/status-report";
 
   // Make POST request
   try {
@@ -67,7 +67,7 @@ async function queryAdCreativeList() {
   }
 }
 
-const filteredList = queryAdCreativeList();
+const filteredList = createStatusReport();
 ```
 
 ## Responses
@@ -102,7 +102,7 @@ Successful requests will respond with a `200` status code, as well as an object 
 
 ### Error (`400` )
 
-Errors while querying ad creative lists occur when the `start_date` specified is after the `end_date` specified _or_ the `start_date`/`end_date` are not in the ISO date format.
+Errors while creating a status report occur when the `start_date` specified is after the `end_date` specified _or_ the `start_date`/`end_date` are not in the ISO date format.
 
 ```json
 {

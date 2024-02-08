@@ -1,22 +1,20 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # Create an ad creative
 
 ### POST `https://api.adcreative.com/v1/ad-creative`
 
-A new ad creative can be created with `POST` request to this endpoint.
+Create a new ad creative with a `POST` request to this endpoint.
 
-> To create multiple ad creatives with a single request, see the [Create bulk ad creatives](./create-bulk-ad-creatives) endpoint.
+> 💡 To create multiple ad creatives with a single request, see the [Create bulk ad creatives](./create-bulk-ad-creatives) endpoint.
 
 ## Requests
 
-`POST` requests must include an [ad creative object](/docs/intro#ad-creative-object) that specifies the details of the ad creative being created.
-
 ### Body parameters
 
-The body parameters for this `POST` request match the ad creative object, as defined in the [introduction](/docs/intro#ad-creative-object) to these docs.
+The body parameters for this `POST` request must include the customizable fields of an [ad creative object](/docs/intro#ad-creative-object).
 
 | Param             | Type                                               | Required | Example                                                                       |
 | ----------------- | -------------------------------------------------- | -------- | ----------------------------------------------------------------------------- |
@@ -52,9 +50,10 @@ curl -X POST 'https://api.adcreative.com/v1/ad-creative' \
 async function createAdCreative(options) {
   const { id, name, type, content, additional_data } = options;
 
-  // return early if required data is not included
+  // Return early if required data is not included
   if (!id || !name || !type || !content) {
-    // add appropriate error handling
+    console.error("Error: A required field is missing");
+    // (Add additional error handling as needed)
     return;
   }
 
@@ -97,17 +96,17 @@ const newAC = createAdCreative(data);
 
 #### Response body
 
-Successful requests will respond with a `200` status code, as well as information related to the created ad creative.
+Successful requests will respond with a `200` status code, as well as the [ad creative object](/docs/intro#ad-creative-object) object for the newly created ad creative.
 
-| Field               | Type     |
-| ------------------- | -------- |
-| `id`                | `string` |
-| `name`              | `string` |
-| `type`              | `string` |
-| `content`           | `string` |
-| `additional_data`   | `array`  |
-| `created_at`        | `string` |
-| `last_updated_time` | `string` |
+| Field               | Type                |
+| ------------------- | ------------------- |
+| `id`                | `string`            |
+| `name`              | `string`            |
+| `type`              | `string`            |
+| `content`           | `string`            |
+| `additional_data`   | `array`             |
+| `created_at`        | `string` (ISO date) |
+| `last_updated_time` | `string` (ISO date) |
 
 #### Response example
 
@@ -123,9 +122,11 @@ Successful requests will respond with a `200` status code, as well as informatio
 }
 ```
 
-### Error (`400` )
+### Error (`400`)
 
-Errors can occur for different reasons, such as a missing or invalid token or required parameter. To resolve request errors, refer to the `error_msg` in the response body for more information.
+Unsuccessful requests will respond with a status code of `400`.
+
+Errors can occur for various reasons, such as a missing or invalid token or required parameter. To resolve request errors, refer to the `error_msg` in the response body for more information.
 
 ```json
 {

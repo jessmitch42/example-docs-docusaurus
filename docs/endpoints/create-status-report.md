@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 5
 ---
 
 # Create status report
@@ -100,7 +100,9 @@ Successful requests will respond with a `200` status code, as well as an object 
   },
 ```
 
-### Error (`400` )
+### Error (`400`)
+
+Unsuccessful requests will respond with a status code of `400`.
 
 Errors while creating a status report occur when the `start_date` specified is after the `end_date` specified _or_ the `start_date`/`end_date` are not in the ISO date format.
 

@@ -1,20 +1,20 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 # Create bulk ad creatives
 
 ### POST `https://api.adcreative.com/v1/ad-creative`
 
-Bulk ad creatives can be created with `POST` request to this endpoint.
+Bulk ad creatives can be created with a single `POST` request to this endpoint.
 
-> To create a single ad creative, see the [Create ad creatives](./create-bulk-ad-creatives) endpoint.
+> 💡 To create a single ad creative, use the [Create ad creatives](./create-bulk-ad-creatives) endpoint.
 
 ## Requests
 
-`POST` requests must include an array of [ad creative objects](./create-bulk-ad-creatives#ad-creative-object) being created.
-
 ### Body parameters
+
+The body parameters for this `POST` request must include an array of [ad creative objects](./create-bulk-ad-creatives#ad-creative-object) in the body of the request.
 
 | Param             | Type                                                                            | Required | Example                                            |
 | ----------------- | ------------------------------------------------------------------------------- | -------- | -------------------------------------------------- |
@@ -141,9 +141,11 @@ Successful requests will respond with a `200` status code, as well as an array o
 ]
 ```
 
-### Error (`400` )
+### Error (`400`)
 
-Errors while retrieving ad creatives can occur for different reasons, such as a missing or invalid token.
+Unsuccessful requests will respond with a status code of `400`.
+
+Errors while retrieving ad creatives can occur for various reasons, such as a missing or invalid token.
 
 Refer to the `error_msg` in the response body for more information on the error that occurred.
 

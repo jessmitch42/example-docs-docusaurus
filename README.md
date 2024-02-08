@@ -16,6 +16,8 @@ All assignment requirements are answered within the website's UI to avoid the re
 
 ---
 
+## Run on your local machine
+
 ### Installation
 
 ```

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 # Update an ad creative
@@ -117,7 +117,9 @@ Successful requests will respond with a `200` status code, as well as informatio
 }
 ```
 
-### Error (`400` )
+### Error (`400`)
+
+Unsuccessful requests will respond with a status code of `400`.
 
 Errors can occur for different reasons, such as a missing or invalid token or if the ID of the ad creative being updated does not exist. To resolve request errors, refer to the `error_msg` in the response body for more information.
 

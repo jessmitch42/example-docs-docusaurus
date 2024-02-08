@@ -1,10 +1,10 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # Retrieve ad creative list
 
-### GET `https://api.adcreative.com/v1/ad-creative?ids=<id1>,<id2>`
+### GET `https://api.adcreative.com/v1/ad-creative?ids=<id1>,<id2>,...`
 
 Retrieve a list of existing ad creative using a `GET` request to this endpoint. To retrieve specific ad creatives, include their IDs as a list under the `ids` query parameter.
 
@@ -98,9 +98,11 @@ Successful requests will respond with a `200` status code, as well as an array o
 ]
 ```
 
-### Error (`400` )
+### Error (`400`)
 
-Errors while creating ad creatives can occur for different reasons, such as a missing or invalid token or required parameter.
+Unsuccessful requests will respond with a status code of `400`.
+
+Errors while creating ad creatives can occur for various reasons, such as a missing or invalid token or required parameter.
 
 If creating any ad creative in the array results in an error, the request will fail. The response body will include an array of `error_msg`s to help developers debug their requests.
 

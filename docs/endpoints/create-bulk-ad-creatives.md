@@ -112,9 +112,9 @@ const newBulkACs = createBulkAdCreatives(data);
 
 Successful requests will respond with a `200` status code, as well as the array of ad creative objects that were successfully created.
 
-| Field       | Type                                                                            |
-| ----------- | ------------------------------------------------------------------------------- |
-| `"results"` | `array` of [ad creative objects](./create-bulk-ad-creatives#ad-creative-object) |
+| Field       | Type                                                          |
+| ----------- | ------------------------------------------------------------- |
+| `"results"` | `array` of [ad creative objects](../intro#ad-creative-object) |
 
 #### Response example
 
@@ -147,7 +147,7 @@ Successful requests will respond with a `200` status code, as well as the array 
 
 Unsuccessful requests will respond with a status code of `400`.
 
-Errors while retrieving ad creatives can occur for various reasons, such as a missing or invalid field.
+Errors while creating ad creatives can occur for various reasons, such as a missing or invalid field.
 
 For this endpoint, an array of objects will be returned for each ad creative. Ad creatives causing an error include an error message. Refer to the `error_msg` in the response body for more information on the error(s) that occurred.
 

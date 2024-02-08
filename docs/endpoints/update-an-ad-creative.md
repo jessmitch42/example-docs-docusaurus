@@ -28,7 +28,6 @@ Include only the body parameters that need to be updated for the ad creative. Fi
 
 | Param             | Type                                               | Required | Example                                                                       |
 | ----------------- | -------------------------------------------------- | -------- | ----------------------------------------------------------------------------- |
-| `id`              | `string`                                           | no ❌    | `"jyh7"`                                                                      |
 | `name`            | `string`                                           | no ❌    | `"Ad Creative 1"`                                                             |
 | `type`            | `string`                                           | no ❌    | `"text"`                                                                      |
 | `content`         | `string`                                           | no ❌    | `"Here is some text for an ad"`                                               |

@@ -151,6 +151,9 @@ Refer to the `error_msg` in the response body for more information on the error 
 
 ```json
 {
-  { "error_msg": "Invalid token." },
+  "error": [
+    { "error_msg": null },
+    { "error_msg": "Invalid type for id: 'jyH7'." }
+  ]
 }
 ```

@@ -6,15 +6,17 @@ sidebar_position: 3
 
 ### GET `https://api.adcreative.com/v1/ad-creative?ids=<id1>,<id2>,...`
 
-Retrieve a list of existing ad creative using a `GET` request to this endpoint. To retrieve specific ad creatives, include their IDs as a list under the `ids` query parameter.
+Retrieve a list of existing ad creative using a `GET` request to this endpoint. Include the IDs as a list under the `ids` query parameter to include an ad creative in the response.
 
 ## Requests
 
 ### Query parameters
 
-| Param | Type     | Required | Example  |
-| ----- | -------- | -------- | -------- |
-| `ids` | `string` | yes ✅   | `"jyh7"` |
+Pass the IDs of existing ad creatives to include them in the retrieved list.
+
+| Param | Type     | Required | Examples                      |
+| ----- | -------- | -------- | ----------------------------- |
+| `ids` | `string` | yes ✅   | `"jyh7"`, `"jyh7,jess1,bob1"` |
 
 ### Request examples
 

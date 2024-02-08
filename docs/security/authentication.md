@@ -17,7 +17,7 @@ The following cURL command demonstrates an example of how to authenticate a `GET
 Note the inclusion of the `Authorization` header, which is set to the user’s `X_TOKEN` .
 
 ```bash
-curl 'https://api.adcreative.com/v1/ad-creative/<id>' \
+curl 'https://api.adcreative.com/v1/ad-creative?ids=<id1>' \
   -H 'Authorization: Bearer '"$X_TOKEN"'' \
   -H 'Content-Type: application/json' \
 ```

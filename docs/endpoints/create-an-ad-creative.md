@@ -16,13 +16,13 @@ Create a new ad creative with a `POST` request to this endpoint.
 
 The body parameters for this `POST` request must include the customizable fields of an [ad creative object](/docs/intro#ad-creative-object).
 
-| Param             | Type                                                                                       | Required | Example                                                                       |
-| ----------------- | ------------------------------------------------------------------------------------------ | -------- | ----------------------------------------------------------------------------- |
-| `id`              | `string`                                                                                   | yes ✅   | `"jyh7"`                                                                      |
-| `name`            | `string`                                                                                   | yes ✅   | `"Ad Creative 1"  `                                                           |
-| `type`            | `string`                                                                                   | yes ✅   | `"text"`                                                                      |
-| `content`         | `string`                                                                                   | yes ✅   | `"Here is some text for an ad"`                                               |
-| `additional_data` | `array` of `{ key: value }` objects where the key is a string and the value is `any` type. | no ❌    | `[{ "example1": 15 },{ "example2": "another value" },{ "example3": false },]` |
+| Param             | Type                                                                                         | Required | Example                                                                       |
+| ----------------- | -------------------------------------------------------------------------------------------- | -------- | ----------------------------------------------------------------------------- |
+| `id`              | `string`                                                                                     | yes ✅   | `"jyh7"`                                                                      |
+| `name`            | `string`                                                                                     | yes ✅   | `"Ad Creative 1"  `                                                           |
+| `type`            | `string`                                                                                     | yes ✅   | `"text"`                                                                      |
+| `content`         | `string`                                                                                     | yes ✅   | `"Here is some text for an ad"`                                               |
+| `additional_data` | `array` of `{ key: value }` objects where the key is a `string` and the value is `any` type. | no ❌    | `[{ "example1": 15 },{ "example2": "another value" },{ "example3": false },]` |
 
 ### Request examples
 
@@ -96,7 +96,7 @@ const newAC = createAdCreative(data);
 
 #### Response body
 
-Successful requests will respond with a `200` status code, as well as the [ad creative object](/docs/intro#ad-creative-object) object for the newly created ad creative.
+Successful requests will respond with a `200` status code, as well as the [ad creative object](/docs/intro#ad-creative-object) for the newly created ad creative.
 
 | Field               | Type                |
 | ------------------- | ------------------- |
@@ -126,7 +126,7 @@ Successful requests will respond with a `200` status code, as well as the [ad cr
 
 Unsuccessful requests will respond with a status code of `400`.
 
-Errors can occur for various reasons, such as a missing or invalid token or required parameter. To resolve request errors, refer to the `error_msg` in the response body for more information.
+Errors can occur for various reasons, such as a missing required parameter. To resolve request errors, refer to the `error_msg` in the response body for more information.
 
 ```json
 {

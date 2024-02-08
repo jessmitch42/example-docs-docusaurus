@@ -67,7 +67,7 @@ async function createStatusReport() {
   }
 }
 
-const filteredList = createStatusReport();
+const report = createStatusReport();
 ```
 
 ## Responses
@@ -76,7 +76,7 @@ const filteredList = createStatusReport();
 
 #### Response body
 
-Successful requests will respond with a `200` status code, as well as an object including a key for each date that was included in the report. The value of the key will be an object with information related to ad creatives that were updated or created on that date. If no ad creatives were updated or created, the object will be empty.
+Successful requests will respond with a `200` status code, as well as an object including a key for each date that was included in the report. The value of the key will be a status object with information related to ad creatives that were updated or created on that date. If no ad creatives were updated or created, the object will be empty.
 
 | Field             | Type          |
 | ----------------- | ------------- |

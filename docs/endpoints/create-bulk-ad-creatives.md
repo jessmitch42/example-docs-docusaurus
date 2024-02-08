@@ -22,13 +22,13 @@ The body parameters for this `POST` request must include an array of [ad creativ
 
 #### Ad creative object
 
-| Param             | Type                                               | Required | Example                                                                       |
-| ----------------- | -------------------------------------------------- | -------- | ----------------------------------------------------------------------------- |
-| `id`              | `string`                                           | yes ✅   | `"jyh7"`                                                                      |
-| `name`            | `string`                                           | yes ✅   | `"Ad Creative 1"  `                                                           |
-| `type`            | `string`                                           | yes ✅   | `"text"`                                                                      |
-| `content`         | `string`                                           | yes ✅   | `"Here is some text for an ad"`                                               |
-| `additional_data` | `array` of key (`string`) ⇒ value (`any`) elements | no ❌    | `[{ "example1": 15 },{ "example2": "another value" },{ "example3": false },]` |
+| Param             | Type                                                                                       | Required | Example                                                                       |
+| ----------------- | ------------------------------------------------------------------------------------------ | -------- | ----------------------------------------------------------------------------- |
+| `id`              | `string`                                                                                   | yes ✅   | `"jyh7"`                                                                      |
+| `name`            | `string`                                                                                   | yes ✅   | `"Ad Creative 1"  `                                                           |
+| `type`            | `string`                                                                                   | yes ✅   | `"text"`                                                                      |
+| `content`         | `string`                                                                                   | yes ✅   | `"Here is some text for an ad"`                                               |
+| `additional_data` | `array` of `{ key: value }` objects where the key is a string and the value is `any` type. | no ❌    | `[{ "example1": 15 },{ "example2": "another value" },{ "example3": false },]` |
 
 ### Request examples
 

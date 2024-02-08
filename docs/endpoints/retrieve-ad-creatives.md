@@ -113,7 +113,7 @@ If creating any ad creative in the array results in an error, the request will f
   "error": [
     { "error_msg": null },
     {
-      "error_msg": "AC with the provided ID 'bob1' did not include a required field: 'name'"
+      "error_msg": "AC with the provided ID 'bob1' did not include a required field: 'name'."
     }
   ]
 }

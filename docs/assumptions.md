@@ -13,6 +13,7 @@ The following assumptions have been made to create these example API docs:
    - For the `additional_data` array, I’m assuming the values can be any type. This would typically be more defined in the schema, so in a real-life situation I would ask the engineering team for their specifications. I'm also assuming it's the only optional field since the user may not have additional information to add.
    - I'm limiting the `type` field to the following strings: `"image"`, `"animation"`, `"text"`, `"video"`. This would also be predefined in a real-life situation.
 5. I’ve included cURL and JavaScript examples because cURL commands tend to be quicker to read, but not all developer are comfortable with them. The JavaScript examples represent a more common "real-world" application of the endpoint usage.
+6. I added a `401` error for unauthorized requests.
 
 # Documentating tool of choice
 

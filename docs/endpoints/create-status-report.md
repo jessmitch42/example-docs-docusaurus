@@ -20,13 +20,13 @@ If the `start_date` is not included, the response will include all ad creatives 
 
 If the `end_date` is not included, the response will include all ad creatives created/updated after the specified `start_date`.
 
-If neither the `start_date` or `end_date` parameters are included in the request, the entire ad creative list will be returned. Please see the [Retrieve ad creative list](./retrieve-ad-creatives) endpoint as a better option for this functionality.
+If neither the `start_date` or `end_date` parameters are included in the request, the entire ad creative list will be returned.
 
 The `start_date` must be before the `end_date` to be valid.
 
 | Param        | Type                | Required | Example                 |
 | ------------ | ------------------- | -------- | ----------------------- |
-| `start_date` | `string` (ISO date) | no ❌    | `'2024-01-31 23:59:59'` |
+| `start_date` | `string` (ISO date) | no ❌    | `'2024-01-29 23:59:59'` |
 | `end_date`   | `string` (ISO date) | no ❌    | `'2024-01-31 23:59:59'` |
 
 ### Request examples
@@ -46,7 +46,7 @@ curl -X POST 'https://api.adcreative.com/v1/status-report' \
 #### JavaScript
 
 ```jsx
-async function createStatusReport() {
+async function createStatusReport(dateRange) {
   const token = process.env.X_TOKEN;
   const baseURL = "https://api.adcreative.com/v1/status-report";
 
@@ -58,6 +58,7 @@ async function createStatusReport() {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
+      body: JSON.stringify(dateRange),
     });
 
     return await response.json();
@@ -67,7 +68,11 @@ async function createStatusReport() {
   }
 }
 
-const report = createStatusReport();
+const dateRange = {
+  start_date: "2024-01-29 23:59:59",
+  end_date: "2024-01-31 23:59:59",
+};
+const report = createStatusReport(dateRange);
 ```
 
 ## Responses

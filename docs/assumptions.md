@@ -14,10 +14,10 @@ The following assumptions have been made to create these example API docs:
    - I'm limiting the `type` field to the following strings: `"image"`, `"animation"`, `"text"`, `"video"`.
 5. I’ve included cURL and JavaScript examples because cURL commands tend to be quicker to read, but not all developer are comfortable with them. The JavaScript examples represent a more common "real-world" application of the endpoint usage.
 6. I added a `401` error for unauthorized requests.
-7. I made some assumptions about the structure about error responses.
+7. I made some assumptions about the structure of error responses.
 8. I made the `start_date` and `end_date` optional for the status report. I'm assuming it would just default to the earliest or latest date available.
 
-# Documentating tool of choice
+# Documenting tool of choice
 
 I chose [Docusaurus](https://docusaurus.io/) for this assignment for two reasons:
 

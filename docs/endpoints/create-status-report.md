@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 5
 ---
 
 # Create status report
@@ -67,7 +67,7 @@ async function createStatusReport() {
   }
 }
 
-const filteredList = createStatusReport();
+const report = createStatusReport();
 ```
 
 ## Responses
@@ -76,7 +76,7 @@ const filteredList = createStatusReport();
 
 #### Response body
 
-Successful requests will respond with a `200` status code, as well as an object including a key for each date included in the search. The value of the key will be an object with information related to ad creatives updated and created on that date.
+Successful requests will respond with a `200` status code, as well as an object including a key for each date that was included in the report. The value of the key will be a status object with information related to ad creatives that were updated or created on that date. If no ad creatives were updated or created, the object will be empty.
 
 | Field             | Type          |
 | ----------------- | ------------- |
@@ -93,19 +93,29 @@ Successful requests will respond with a `200` status code, as well as an object 
 #### Response example
 
 ```json
-  {
-    "2024-01-29": { "ids": ["jess1", "bob1"], "total_created": 1, "total_updated": 1},
-    "2024-01-30": { "ids": ["jess2", "bob2"], "total_created": 2, "total_updated": 0},
-    "2024-01-31": { }
+{
+  "2024-01-29": {
+    "ids": ["jess1", "bob1"],
+    "total_created": 1,
+    "total_updated": 1
   },
+  "2024-01-30": {
+    "ids": ["jess2", "bob2"],
+    "total_created": 2,
+    "total_updated": 0
+  },
+  "2024-01-31": {}
+}
 ```
 
-### Error (`400` )
+### Error (`400`)
+
+Unsuccessful requests will respond with a status code of `400`.
 
 Errors while creating a status report occur when the `start_date` specified is after the `end_date` specified _or_ the `start_date`/`end_date` are not in the ISO date format.
 
 ```json
 {
-  { "error_msg": "'January, 01, 2024' is not a valid start_date."  },
+  "error": { "error_msg": "'January, 01, 2024' is not a valid start_date." }
 }
 ```

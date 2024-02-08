@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 4
 ---
 
 # Update an ad creative
@@ -10,13 +10,15 @@ Update an existing ad creative with a `PATCH` request to this endpoint.
 
 ## Requests
 
-`PATCH` requests must include the [ad creative object](/docs/intro#ad-creative-object) `id` as a path param to indicate which ad creative is being updated, as well as the fields being updated in the body params. Only the fields being updated are required.
-
 ### Path params
+
+`PATCH` requests must include the [ad creative object](/docs/intro#ad-creative-object) `id` as a path param to indicate which ad creative is being updated.
 
 | Param | Type     | Required | Example  |
 | ----- | -------- | -------- | -------- |
 | `id`  | `string` | yes ✅   | `"jyh7"` |
+
+#### Example
 
 ```text
 https://api.adcreative.com/v1/ad-creative/jyh7
@@ -24,15 +26,14 @@ https://api.adcreative.com/v1/ad-creative/jyh7
 
 ### Body parameters
 
-Include only the body parameters that need to be updated for the ad creative. Fields that are not included will not be updated from the original. Required fields cannot be set to `null` or `undefined`.
+Include only the body parameters that need to be updated for the ad creative. Fields that are not included will not be updated from the original. Required fields for ad creatives cannot be set to `null` or `undefined`.
 
-| Param             | Type                                               | Required | Example                                                                       |
-| ----------------- | -------------------------------------------------- | -------- | ----------------------------------------------------------------------------- |
-| `id`              | `string`                                           | no ❌    | `"jyh7"`                                                                      |
-| `name`            | `string`                                           | no ❌    | `"Ad Creative 1"`                                                             |
-| `type`            | `string`                                           | no ❌    | `"text"`                                                                      |
-| `content`         | `string`                                           | no ❌    | `"Here is some text for an ad"`                                               |
-| `additional_data` | `array` of key (`string`) ⇒ value (`any`) elements | no ❌    | `[{ "example1": 15 },{ "example2": "another value" },{ "example3": false },]` |
+| Param             | Type                                                                                         | Required | Example                                                                       |
+| ----------------- | -------------------------------------------------------------------------------------------- | -------- | ----------------------------------------------------------------------------- |
+| `name`            | `string`                                                                                     | no ❌    | `"Ad Creative 1"`                                                             |
+| `type`            | `string`                                                                                     | no ❌    | `"text"`                                                                      |
+| `content`         | `string`                                                                                     | no ❌    | `"Here is some text for an ad"`                                               |
+| `additional_data` | `array` of `{ key: value }` objects where the key is a `string` and the value is `any` type. | no ❌    | `[{ "example1": 15 },{ "example2": "another value" },{ "example3": false },]` |
 
 ### Request examples
 
@@ -117,14 +118,20 @@ Successful requests will respond with a `200` status code, as well as informatio
 }
 ```
 
-### Error (`400` )
+### Error (`400`, `404`)
 
-Errors can occur for different reasons, such as a missing or invalid token or if the ID of the ad creative being updated does not exist. To resolve request errors, refer to the `error_msg` in the response body for more information.
+Unsuccessful requests will respond with a status code of `400`.
+
+Errors can occur for different reasons, such as a missing or invalid token.
+
+If the ID of the ad creative being updated does not exist, the status code will be `404`.
+
+To resolve request errors, refer to the `error_msg` in the response body for more information.
 
 ```json
 {
   "error": {
-    "error_msg": "The ID included does not match the ID of an ad creative tied to this account."
+    "error_msg": "Invalid value passed for 'type'."
   }
 }
 ```

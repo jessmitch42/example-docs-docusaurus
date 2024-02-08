@@ -1,20 +1,20 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 # Create bulk ad creatives
 
 ### POST `https://api.adcreative.com/v1/ad-creative`
 
-Bulk ad creatives can be created with `POST` request to this endpoint.
+Bulk ad creatives can be created with a single `POST` request to this endpoint.
 
-> To create a single ad creative, see the [Create ad creatives](./create-bulk-ad-creatives) endpoint.
+> 💡 To create a single ad creative, use the [Create ad creatives](./create-bulk-ad-creatives) endpoint.
 
 ## Requests
 
-`POST` requests must include an array of [ad creative objects](./create-bulk-ad-creatives#ad-creative-object) being created.
-
 ### Body parameters
+
+The body parameters for this `POST` request must include an array of [ad creative objects](./create-bulk-ad-creatives#ad-creative-object) in the body of the request.
 
 | Param             | Type                                                                            | Required | Example                                            |
 | ----------------- | ------------------------------------------------------------------------------- | -------- | -------------------------------------------------- |
@@ -22,13 +22,13 @@ Bulk ad creatives can be created with `POST` request to this endpoint.
 
 #### Ad creative object
 
-| Param             | Type                                               | Required | Example                                                                       |
-| ----------------- | -------------------------------------------------- | -------- | ----------------------------------------------------------------------------- |
-| `id`              | `string`                                           | yes ✅   | `"jyh7"`                                                                      |
-| `name`            | `string`                                           | yes ✅   | `"Ad Creative 1"  `                                                           |
-| `type`            | `string`                                           | yes ✅   | `"text"`                                                                      |
-| `content`         | `string`                                           | yes ✅   | `"Here is some text for an ad"`                                               |
-| `additional_data` | `array` of key (`string`) ⇒ value (`any`) elements | no ❌    | `[{ "example1": 15 },{ "example2": "another value" },{ "example3": false },]` |
+| Param             | Type                                                                                         | Required | Example                                                                       |
+| ----------------- | -------------------------------------------------------------------------------------------- | -------- | ----------------------------------------------------------------------------- |
+| `id`              | `string`                                                                                     | yes ✅   | `"jyh7"`                                                                      |
+| `name`            | `string`                                                                                     | yes ✅   | `"Ad Creative 1"  `                                                           |
+| `type`            | `string`                                                                                     | yes ✅   | `"text"`                                                                      |
+| `content`         | `string`                                                                                     | yes ✅   | `"Here is some text for an ad"`                                               |
+| `additional_data` | `array` of `{ key: value }` objects where the key is a `string` and the value is `any` type. | no ❌    | `[{ "example1": 15 },{ "example2": "another value" },{ "example3": false },]` |
 
 ### Request examples
 
@@ -110,45 +110,52 @@ const newBulkACs = createBulkAdCreatives(data);
 
 #### Response body
 
-Successful requests will respond with a `200` status code, as well as an array of ad creative objects that was successfully created.
+Successful requests will respond with a `200` status code, as well as the array of ad creative objects that were successfully created.
 
-| Field             | Type                                                                            |
-| ----------------- | ------------------------------------------------------------------------------- |
-| Ad creative array | `array` of [ad creative objects](./create-bulk-ad-creatives#ad-creative-object) |
+| Field       | Type                                                                            |
+| ----------- | ------------------------------------------------------------------------------- |
+| `"results"` | `array` of [ad creative objects](./create-bulk-ad-creatives#ad-creative-object) |
 
 #### Response example
 
 ```json
-[
-  {
-    "id": "jess1",
-    "name": "First Ad Creative",
-    "type": "image",
-    "content": "/images/first_ad_creative.png",
-    "additional_data": [{ "client": "TBD" }],
-    "created_time": "2024-01-31 23:59:58",
-    "last_updated_time": "2024-01-31 23:59:58"
-  },
-  {
-    "id": "bob1",
-    "name": "Another Ad Creative",
-    "type": "text",
-    "content": "Here is some text for an ad!",
-    "additional_data": [],
-    "created_time": "2024-01-31 23:59:59",
-    "last_updated_time": "2024-01-31 23:59:59"
-  }
-]
+{
+  "results": [
+    {
+      "id": "jess1",
+      "name": "First Ad Creative",
+      "type": "image",
+      "content": "/images/first_ad_creative.png",
+      "additional_data": [{ "client": "TBD" }],
+      "created_time": "2024-01-31 23:59:58",
+      "last_updated_time": "2024-01-31 23:59:58"
+    },
+    {
+      "id": "bob1",
+      "name": "Another Ad Creative",
+      "type": "text",
+      "content": "Here is some text for an ad!",
+      "additional_data": [],
+      "created_time": "2024-01-31 23:59:59",
+      "last_updated_time": "2024-01-31 23:59:59"
+    }
+  ]
+}
 ```
 
-### Error (`400` )
+### Error (`400`)
 
-Errors while retrieving ad creatives can occur for different reasons, such as a missing or invalid token.
+Unsuccessful requests will respond with a status code of `400`.
 
-Refer to the `error_msg` in the response body for more information on the error that occurred.
+Errors while retrieving ad creatives can occur for various reasons, such as a missing or invalid field.
+
+For this endpoint, an array of objects will be returned for each ad creative. Ad creatives causing an error include an error message. Refer to the `error_msg` in the response body for more information on the error(s) that occurred.
 
 ```json
 {
-  { "error_msg": "Invalid token." },
+  "error": [
+    { "error_msg": null },
+    { "error_msg": "Invalid type for id: 'jyH7'." }
+  ]
 }
 ```
